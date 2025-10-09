@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+@custom-variant dark (&:where(.dark, .dark *));
+@import '../../vendor/wireui/wireui/ts/global.css';
+@source '../../vendor/wireui/wireui';
+
+@layer base {
+  html {
+    color-scheme: light !important;
+  }
+}
+
+[x-cloak] {
+    display: none;
+}

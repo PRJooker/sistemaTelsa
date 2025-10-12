@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ViajesController;
+use App\Http\Controllers\RutasController;
 
 Route::redirect('/', '/admin');
 
@@ -16,27 +16,27 @@ Route::middleware([
     })->name('dashboard');
 
     // ------------------------------
-    // Rutas de Operativo - Viajes
+    // Rutas de Operativo - Rutas
     // ------------------------------
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::prefix('operativo')->name('operativo.')->group(function () {
 
-            // Listado de viajes
-            Route::get('viajes', [ViajesController::class, 'index'])->name('viajes.index');
+            // Listado de rutas
+            Route::get('rutas', [RutasController::class, 'index'])->name('rutas.index');
 
-            // Crear viaje
-            Route::get('viajes/create', [ViajesController::class, 'create'])->name('viajes.create');
-            Route::post('viajes', [ViajesController::class, 'store'])->name('viajes.store');
+            // Crear nueva ruta
+            Route::get('rutas/create', [RutasController::class, 'create'])->name('rutas.create');
+            Route::post('rutas', [RutasController::class, 'store'])->name('rutas.store');
 
-            // Editar viaje
-            Route::get('viajes/{id}/edit', [ViajesController::class, 'edit'])->name('viajes.edit');
-            Route::put('viajes/{id}', [ViajesController::class, 'update'])->name('viajes.update');
+            // Editar ruta
+            Route::get('rutas/{id}/edit', [RutasController::class, 'edit'])->name('rutas.edit');
+            Route::put('rutas/{id}', [RutasController::class, 'update'])->name('rutas.update');
 
-            // Borrado lógico
-            Route::delete('viajes/{id}', [ViajesController::class, 'destroy'])->name('viajes.destroy');
+            // Soft delete (borrado lógico)
+            Route::delete('rutas/{id}', [RutasController::class, 'destroy'])->name('rutas.destroy');
 
-            // Activar / Desactivar viaje
-            Route::patch('viajes/{id}/toggle', [ViajesController::class, 'toggle'])->name('viajes.toggle');
+            // Activar / Desactivar (si decides implementar)
+            Route::patch('rutas/{id}/toggle', [RutasController::class, 'toggle'])->name('rutas.toggle');
         });
     });
 

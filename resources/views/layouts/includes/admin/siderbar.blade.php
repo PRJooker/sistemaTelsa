@@ -48,6 +48,26 @@ $links = [
             ],
         ],
     ],
+    [
+        'name' => 'Tipos de Transporte',
+        'icon' => 'fa-solid fa-truck',
+        'href' => '#',
+        'active' => request()->routeIs('admin.operativo.tipotransporte.*'),
+        'submenu' => [
+            [
+                'name' => 'Lista Transporte',
+                'icon' => 'fa-solid fa-table',
+                'href' => route('admin.operativo.tipotransporte.index'),
+                'active' => request()->routeIs('admin.operativo.tipotransporte.index'),
+            ],
+            [
+                'name' => 'Añadir Transporte',
+                'icon' => 'fa-solid fa-plus',
+                'href' => route('admin.operativo.tipotransporte.create'),
+                'active' => request()->routeIs('admin.operativo.tipotransporte.create'),
+            ],
+        ],
+    ],
 ];
 @endphp
 

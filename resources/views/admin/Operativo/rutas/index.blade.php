@@ -1,4 +1,8 @@
-<x-admin-layout>
+<x-admin-layout :breadcrumbs="[
+    ['name' => 'Dashboard', 'href' => route('admin.dashboard')],
+    ['name' => 'Operativo', 'href' => route('admin.operativo.rutas.index')],
+    ['name' => 'Listado rutas']
+]">
     <div class="container mx-auto mt-6 px-4">
         <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Listado de Rutas</h2>
 

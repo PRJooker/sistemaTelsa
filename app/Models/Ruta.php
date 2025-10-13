@@ -18,7 +18,7 @@ class Ruta extends Model
         'user_id', // <--- Agregado
     ];
 
-    // Relación con el usuario que la creó (opcional)
+   
     public function usuario()
     {
         return $this->belongsTo(User::class, 'user_id');

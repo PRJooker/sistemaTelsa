@@ -15,5 +15,13 @@ class Ruta extends Model
     protected $fillable = [
         'origen',
         'destino',
+        'user_id', // <--- Agregado
     ];
+
+    // Relación con el usuario que la creó (opcional)
+    public function usuario()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
+

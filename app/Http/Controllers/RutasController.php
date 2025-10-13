@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ruta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RutasController extends Controller
 {
@@ -27,18 +28,22 @@ class RutasController extends Controller
     /**
      * Guardar una nueva ruta.
      */
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'origen' => 'required|string|max:255',
-            'destino' => 'required|string|max:255',
-        ]);
+  public function store(Request $request)
+{
+    $request->validate([
+        'origen' => 'required|string|max:255',
+        'destino' => 'required|string|max:255',
+    ]);
 
-        Ruta::create($validated);
+    Ruta::create([
+        'origen' => $request->origen,
+        'destino' => $request->destino,
+        'user_id' => Auth::id(), 
+    ]);
 
-        return redirect()->route('admin.operativo.rutas.index')
-                         ->with('success', 'Ruta registrada correctamente.');
-    }
+    return redirect()->route('admin.operativo.rutas.index')->with('success', 'Ruta creada correctamente.');
+}
+
 
     /**
      * Mostrar formulario para editar una ruta existente.

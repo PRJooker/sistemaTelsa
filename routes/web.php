@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RutasController;
 use App\Http\Controllers\TipoTransporteController;
+use App\Http\Controllers\TarifaController;
 
 Route::redirect('/', '/admin');
 
@@ -57,5 +58,33 @@ Route::middleware([
 
         });
     });
+    
+     // -----------------------------------
+    // Rutas de Operativo - Tarifas
+    // ------------------------------------
+    Route::prefix('admin')->name('admin.')->middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+
+    Route::prefix('operativo')->name('operativo.')->group(function () {
+
+        // ---------------------------
+        // Tarifas
+        // ---------------------------
+        Route::get('tarifas', [TarifaController::class, 'index'])->name('tarifas.index');
+        Route::get('tarifas/create', [TarifaController::class, 'create'])->name('tarifas.create');
+        Route::post('tarifas', [TarifaController::class, 'store'])->name('tarifas.store');
+
+        // Editar / Actualizar
+        Route::get('tarifas/{tarifa}/edit', [TarifaController::class, 'edit'])->name('tarifas.edit');
+        Route::put('tarifas/{tarifa}', [TarifaController::class, 'update'])->name('tarifas.update');
+
+        // Eliminar
+        Route::delete('tarifas/{tarifa}', [TarifaController::class, 'destroy'])->name('tarifas.destroy');
+    });
+
+});
 
 });

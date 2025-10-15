@@ -35,7 +35,7 @@ $links = [
         'active' => request()->routeIs('admin.operativo.rutas.*'),
         'submenu' => [
             [
-                'name' => 'Listado Rutas',
+                'name' => 'Listado rutas',
                 'icon' => 'fa-solid fa-table',
                 'href' => route('admin.operativo.rutas.index'),
                 'active' => request()->routeIs('admin.operativo.rutas.index'),
@@ -55,16 +55,36 @@ $links = [
         'active' => request()->routeIs('admin.operativo.tipotransporte.*'),
         'submenu' => [
             [
-                'name' => 'Lista Transporte',
+                'name' => 'Lista transporte',
                 'icon' => 'fa-solid fa-table',
                 'href' => route('admin.operativo.tipotransporte.index'),
                 'active' => request()->routeIs('admin.operativo.tipotransporte.index'),
             ],
             [
-                'name' => 'Añadir Transporte',
+                'name' => 'Añadir transporte',
                 'icon' => 'fa-solid fa-plus',
                 'href' => route('admin.operativo.tipotransporte.create'),
                 'active' => request()->routeIs('admin.operativo.tipotransporte.create'),
+            ],
+        ],
+    ],
+    [
+        'name' => 'Tarifas de ruta',
+        'icon' => 'fa-solid fa-money-bill',
+        'href' => '#',
+        'active' => request()->routeIs('admin.operativo.tarifas.*'),
+        'submenu' => [
+            [
+                'name' => 'Listado tarifas',
+                'icon' => 'fa-solid fa-table',
+                'href' => route('admin.operativo.tarifas.index'),
+                'active' => request()->routeIs('admin.operativo.tarifas.index'),
+            ],
+            [
+                'name' => 'Añadir tarifa',
+                'icon' => 'fa-solid fa-plus',
+                'href' => route('admin.operativo.tarifas.create'),
+                'active' => request()->routeIs('admin.operativo.tarifas.create'),
             ],
         ],
     ],

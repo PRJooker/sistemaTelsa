@@ -6,7 +6,7 @@ use App\Http\Controllers\TipoTransporteController;
 use App\Http\Controllers\TarifaController;
 use App\Http\Controllers\TipoGastoController;
 use App\Http\Controllers\CategoriaGastoController;
-use App\Models\CategoriaGasto;
+
 
 Route::redirect('/', '/admin');
 
@@ -42,7 +42,7 @@ Route::middleware([
                 ->name('categoriasgastos.update');
             Route::delete('categorias-gastos/{categoriaGasto}', [CategoriaGastoController::class, 'destroy'])
                 ->name('categoriasgastos.destroy');
-
+            
             // ---------------------------
             // Tipos de Gastos (por Categoría)
             // ---------------------------

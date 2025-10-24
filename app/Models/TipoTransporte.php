@@ -20,9 +20,9 @@ class TipoTransporte extends Model
         'usuario_actualizo',
     ];
 
-    // Si quieres manejar fechas de soft delete automáticamente
+   
     protected $dates = ['deleted_at'];
 
-    // Si quieres manejar created_at y updated_at automáticamente
+
     public $timestamps = true;
 }

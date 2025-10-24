@@ -18,14 +18,12 @@ class OperativoController extends Controller
 
     public function store(Request $request)
     {
-        // Validar datos (ejemplo)
+        
         $validated = $request->validate([
             'origen' => 'required|string|max:255',
             'destino' => 'required|string|max:255',
         ]);
 
-        // Guardar en BD si tienes modelo (opcional)
-        // \App\Models\Operativo::create($validated);
 
         // Redirigir correctamente con el nombre de ruta completo
         return redirect()->route('admin.operativo.index')

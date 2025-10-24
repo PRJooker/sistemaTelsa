@@ -25,6 +25,32 @@ $links = [
             ]
         ]
     ],
+
+
+    [
+        'header' => 'Administrativo'
+    ],
+    [
+        'name' => 'Gastos',
+        'icon' => 'fa-solid fa-file-invoice-dollar',
+        'href' => '#',
+        'active' => request()->routeIs('admin.administrativo.gastos.*'),
+        'submenu' => [
+            [
+                'name' => 'Categoría de Gastos',
+                'icon' => 'fa-solid fa-layer-group',
+                'href' => route('admin.administrativo.categoriasgastos.index'),
+                'active' => request()->routeIs('admin.administrativo.categoriasgastos.*'),
+            ],
+            [
+                'name' => 'Gastos por Categoría',
+                'icon' => 'fa-solid fa-list',
+                'href' => route('admin.administrativo.tiposgastos.index'),
+                'active' => request()->routeIs('admin.administrativo.tiposgastos.*'),
+            ],
+        ],
+    ],
+
     [
         'header' => 'Operativo'
     ],

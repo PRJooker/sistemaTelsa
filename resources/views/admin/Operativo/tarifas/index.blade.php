@@ -5,7 +5,7 @@
 ]">
     <div class="p-6 bg-white rounded-lg shadow">
         <div class="flex justify-between items-center mb-4">
-            <h1 class="text-2xl font-semibold text-black">Tarifas de ruta</h1>
+            <h1 class="text-2xl font-semibold text-black">Tarifas de ruta </h1>
             <a href="{{ route('admin.operativo.tarifas.create') }}"
                class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 flex items-center">
                <i class="fa-solid fa-plus mr-2"></i> Nueva tarifa

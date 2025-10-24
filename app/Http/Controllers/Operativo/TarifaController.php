@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Operativo;
+use App\Http\Controllers\Controller;
 use App\Models\Tarifa;
 use App\Models\Ruta;
 use App\Models\TipoTransporte;

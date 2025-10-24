@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Operativo;
+use App\Http\Controllers\Controller;
 use App\Models\TipoTransporte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
